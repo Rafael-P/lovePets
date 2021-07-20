@@ -29,22 +29,27 @@ namespace senai_lovePets_webApi.Repositories
 
         public Veterinario BuscarPorId(int idVeterinario)
         {
-            throw new NotImplementedException();
+            return ctx.Veterinarios.Find(idVeterinario);
         }
 
         public void Cadastrar(Veterinario novoVeterinario)
         {
-            throw new NotImplementedException();
+            ctx.Veterinarios.Add(novoVeterinario);
+
+            ctx.SaveChanges();
         }
 
         public void Deletar(int idVeterinario)
         {
-            throw new NotImplementedException();
+            ctx.Veterinarios.Remove(BuscarPorId(idVeterinario));
+
+            ctx.SaveChanges();
         }
 
         public List<Veterinario> ListarTodos()
         {
-            throw new NotImplementedException();
+            return ctx.Veterinarios.ToList();
         }
+
     }
 }
