@@ -45,6 +45,12 @@
             </summary>
             <returns>Um status code 204 - No Content</returns>
         </member>
+        <member name="M:senai_lovePets_webApi.Controllers.AtendimentosController.ListarMeus">
+            <summary>
+            Lista os atendimentos de um usuário logado
+            </summary>
+            <returns>Uma lista de atendimentos com o Status code 200 - Ok</returns>
+        </member>
         <member name="M:senai_lovePets_webApi.Interfaces.IAtendimentoRepository.ListarTodos">
             <summary>
             Lista todos os atendimentos

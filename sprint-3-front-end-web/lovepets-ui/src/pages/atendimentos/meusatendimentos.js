@@ -1,6 +1,6 @@
 import { Component } from "react";
 
-export default class Atendimentos extends Component{
+export default class MeusAtendimentos extends Component{
   constructor(props){
     super(props);
     this.state = {
@@ -12,9 +12,9 @@ export default class Atendimentos extends Component{
   buscarAtendimentos = () => {
     console.log('Esta função traz todos os atendimentos.');
 
-    fetch('http://localhost:5000/api/atendimentos', {
+    fetch('http://localhost:5000/api/atendimentos/meus', {
       headers : {
-        'Authorization' : 'Bearer' + localStorage.getItem('usuario-login')
+        'Authorization' : 'Bearer ' + localStorage.getItem('usuario-login')
       }
     })
 

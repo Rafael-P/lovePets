@@ -2,25 +2,39 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 
+import { usuarioAutenticado, parseJwt } from './services/auth';
+
 import './index.css';
 
 import App from './pages/home/App';
 import Atendimentos from './pages/atendimentos/atendimentos';
+import MeusAtendimentos from './pages/atendimentos/meusatendimentos'
 import Login from './pages/login/login';
-import NotFound from './pages/notFound/notFound';
 import Clinicas from './pages/clinicas/clinicas';
+import NotFound from './pages/notFound/notFound';
 
 import reportWebVitals from './reportWebVitals';
+
+const PermissaoAdm = ({ component : Component}) => (
+  <Route 
+    render = { props => 
+      usuarioAutenticado() && parseJwt().role === "1" ?
+      <Component {...props} /> :
+      <Redirect to="/login" />
+    }
+  />
+)
 
 const routing = (
   <Router>
     <div>
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/atendimentos" component={Atendimentos} />
+        <PermissaoAdm path="/atendimentos" component={Atendimentos} />
+        <Route path="/meusatendimentos" component={MeusAtendimentos} />
         <Route path="/login" component={Login} />
-        <Route exact path="/notfound" component={NotFound} />
         <Route path="/clinicas" component={Clinicas} />
+        <Route exact path="/notfound" component={NotFound} />
         <Redirect to="/notFound" />
       </Switch>
     </div>

@@ -21,7 +21,7 @@ export default class Clinicas extends Component{
             return resposta.json();
         })
 
-        then(resposta => this.setState({ listaClinicas : resposta}))
+        .then(resposta => this.setState({ listaClinicas : resposta}))
 
         .catch(erro => console.log(erro));
     };
