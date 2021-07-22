@@ -1,0 +1,200 @@
+{
+	"info": {
+		"_postman_id": "1f8814cf-3b53-4884-88e0-71ecad7bddcb",
+		"name": "Senai_LovePets_WebAPI_Manha1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Atendimentos",
+			"item": [
+				{
+					"name": "Atendimentos.ListarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atendimentos.Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idVeterinario\" : 1,\r\n    \"idPet\" : 3,\r\n    \"descricao\" : \"o pet está saudável\",\r\n    \"dataAtendimento\" : \"2021-07-19T07:30:00\",\r\n    \"idSituacao\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atendimentos.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idVeterinario\" : 1,\r\n    \"idPet\" : 3,\r\n    \"descricao\" : \"o pet está ok\",\r\n    \"dataAtendimento\" : \"2021-07-19T08:30:00\",\r\n    \"idSituacao\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atendimentos.Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atendimentos.BuscarPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atendimentos.AlterarSituacao",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idAtendimento\" : 3,\r\n    \"idSituacao\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/atendimentos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"atendimentos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clinica",
+			"item": []
+		},
+		{
+			"name": "Dono",
+			"item": []
+		},
+		{
+			"name": "Pet",
+			"item": []
+		},
+		{
+			"name": "Raca",
+			"item": []
+		},
+		{
+			"name": "Situacao",
+			"item": []
+		},
+		{
+			"name": "TipoPet",
+			"item": []
+		},
+		{
+			"name": "TipoUsuario",
+			"item": []
+		},
+		{
+			"name": "Usuario",
+			"item": []
+		},
+		{
+			"name": "Veterinario",
+			"item": []
+		}
+	]
+}

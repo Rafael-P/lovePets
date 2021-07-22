@@ -19,5 +19,13 @@ namespace senai_lovePets_webApi.Interfaces
 
         void Deletar(int idUsuario);
 
+        /// <summary>
+        /// Busca um usuário existente através do seu e-mail e sua senha
+        /// </summary>
+        /// <param name="email">O valor do e-mail digitado pelo usuário</param>
+        /// <param name="senha">O valor da senha digitada pelo usuário</param>
+        /// <returns>Um usuário encontrado</returns>
+        Usuario BuscarPorEmailSenha(string email, string senha);
+
     }
 }

@@ -25,13 +25,23 @@ const PermissaoAdm = ({ component : Component}) => (
   />
 )
 
+const PermissaoLogado = ({ component : Component }) => (
+  <Route 
+    render = { props =>
+      usuarioAutenticado() && (parseJwt().role === "2" || parseJwt().role === "3") ?
+      <Component {...props} /> :
+      <Redirect to="/login" />
+    }
+  />
+)
+
 const routing = (
   <Router>
     <div>
       <Switch>
         <Route exact path="/" component={App} />
         <PermissaoAdm path="/atendimentos" component={Atendimentos} />
-        <Route path="/meusatendimentos" component={MeusAtendimentos} />
+        <PermissaoLogado path="/meusatendimentos" component={MeusAtendimentos} />
         <Route path="/login" component={Login} />
         <Route path="/clinicas" component={Clinicas} />
         <Route exact path="/notfound" component={NotFound} />
